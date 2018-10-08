@@ -22,9 +22,11 @@ module.exports = {
             },
         ],
     },
+    optimization: {
+        minimizer: [new UglifyJsPlugin()]
+    },
     plugins: [
-        new UglifyJsPlugin(),
         new webpack.IgnorePlugin(/(jsdom|optional)$/),
     ],
-    mode: 'development',
+    mode: 'production',
 };
