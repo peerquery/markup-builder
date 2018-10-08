@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Markup tools demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <style>
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+  </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Homepage</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Peer Query</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Github</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">NPM</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">PQ Open Source</a>
+    </li>
+  </ul>
+
+  </div>
+</nav>
+
+<div class="container" style="margin-top: 2rem">
+  
+    <div class='row'>
+        <h2 class='mx-auto'>Markup tools demo</h2>
+    </div>
+  
+    <div class='row'>
+        <p class='mx-auto'>
+            <b>Enter or edit the content within the text box. Then click on any of the buttons to see the output in the card on your right.</b>
+        </p>
+    </div>
+  
+    <div class='row'>
+        <p class='mx-auto'>Markdown content sourced from <a href="https://markdown-it.github.io/" target="_blank">https://markdown-it.github.io/</a>.</p>
+    </div>
+  
+  
+  
+  
+  
+  <div class="row" style="margin-top: 3rem">
+    
+    <div class="col-sm-6">
+
+        <div class="form-group">
+            <span class="badge badge-pill badge-warning">Input</span>
+            <textarea id="input" class="form-control" rows="15" id="comment">**Lorem ipsum dolor sit amet**, consectetuer adipiscing elit. Aenean <i>commodo ligula eget</i> dolor. Aenean massa. Cum @sociis natoque #penatibus et magnis dis parturient montes,<script>alert('Quisque rutrum.')</script> nascetur ridiculus mus. Donec quam felis, https://www.youtube.com/watch?v=sO_YEdTcVXc https://travis-ci.org/peerquery/markup-tools
+            </textarea>
+        </div>
+        
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary" onClick="process('sanitize')">Sanitize</button>
+            <button type="button" class="btn btn-primary" onClick="process('text')">Text</button>
+            <button type="button" class="btn btn-primary" onClick="process('summary')">Summary</button>
+            <button type="button" class="btn btn-primary" onClick="process('html')">Html</button>
+            <button type="button" class="btn btn-primary" onClick="content()">Content</button>
+        </div>
+
+    </div>
+    
+    <div class="col-sm-6">
+     
+            <span class="badge badge-pill badge-info">Output</span>
+        <div class="card bg-light">
+            <div class="card-body text-center" id="output" style="overflow-y: scroll; height:430px;">
+                <p class="card-text">Final processed output shows here</p>
+            </div>
+        </div>
+    
+    </div>
+    
+  </div>
+
+
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<script src="../dist/markup.min.js" charset="utf-8"></script>
+
+<script>
+async function process(action) {
+    var raw = document.getElementById('input').value;
+    var done;
+    
+    if (action == 'sanitize') done = await markup.txt.sanitize(raw);
+    if (action == 'summary') done = await markup.txt.summary(raw);
+    if (action == 'text') done = await markup.txt.text(raw);
+    if (action == 'html') done = await markup.txt.html(raw);
+    
+    document.getElementById('output').innerText = done;
+}
+
+async function content() {
+    var raw = document.getElementById('input').value;
+    document.getElementById('output').innerHTML = await markup.txt.content(raw, null, true);
+}
+
+</script>
+
+
+</body>
+</html>
