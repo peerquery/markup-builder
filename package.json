@@ -1,6 +1,6 @@
 {
   "name": "markup-builder",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Markup and HTML builder tools",
   "main": "./lib/index.js",
   "scripts": {
