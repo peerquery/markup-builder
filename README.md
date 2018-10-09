@@ -195,7 +195,7 @@ Accessing dependencies:
 
 ```javascript
 const remarkable = markup.dep.Remarkable;
-const sanitize = markup.dep.Sanitize;
+const sanitize = markup.dep.sanitizeHtml;
 const domparser = markup.dep.DomParser;
 ```
 
