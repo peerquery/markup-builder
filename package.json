@@ -30,11 +30,9 @@
   "homepage": "https://github.com/peerquery/markup-builder#readme",
   "dependencies": {
     "@babel/runtime": "^7.1.2",
-    "browser-or-node": "^1.1.0",
     "dom-parser": "^0.1.5",
-    "dompurify": "^1.0.8",
-    "jsdom": "^12.1.0",
-    "remarkable": "^1.7.1"
+    "remarkable": "^1.7.1",
+    "sanitize-html": "^1.19.1"
   },
   "lint-staged": {
     "*.js": [
