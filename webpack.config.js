@@ -25,8 +25,5 @@ module.exports = {
     optimization: {
         minimizer: [new UglifyJsPlugin()]
     },
-    plugins: [
-        new webpack.IgnorePlugin(/(jsdom|optional)$/),
-    ],
     mode: 'production',
 };
