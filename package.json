@@ -9,7 +9,7 @@
     "lintfix": "eslint \"**/*.js\" --fix",
     "lint": "eslint \"**/*.js\"",
     "lintstaged": "./node_modules/.bin/lint-staged",
-    "test": "npm run lintfix",
+    "test": "npm run lintfix && node ./node_modules/mocha/bin/mocha --exit",
     "build": "npm run lintfix && webpack"
   },
   "repository": {
@@ -41,10 +41,12 @@
     ]
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^5.6.1",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.1.1",
     "lint-staged": "^7.3.0",
+    "mocha": "^5.2.0",
     "prettier": "^1.14.3",
     "pretty-quick": "^1.7.0",
     "webpack": "^4.12.0",
