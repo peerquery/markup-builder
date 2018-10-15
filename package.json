@@ -10,7 +10,7 @@
     "lint": "eslint \"**/*.js\"",
     "lintstaged": "./node_modules/.bin/lint-staged",
     "test": "npm run lintfix && node ./node_modules/mocha/bin/mocha --exit",
-    "build": "npm run lintfix && webpack"
+    "build": "npm run test && webpack"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
     "dom-parser": "^0.1.5",
     "markup-tools": "^2.7.0",
     "remarkable": "^1.7.1",
-    "sanitize-html": "^1.19.1"
+    "xss": "^1.0.3"
   },
   "lint-staged": {
     "*.js": [

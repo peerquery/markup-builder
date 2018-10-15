@@ -106,17 +106,17 @@ async function process(action) {
     var raw = document.getElementById('input').value;
     var done;
     
-    if (action == 'sanitize') done = await markup.txt.sanitize(raw);
-    if (action == 'summary') done = await markup.txt.summary(raw);
-    if (action == 'text') done = await markup.txt.text(raw);
-    if (action == 'html') done = await markup.txt.html(raw);
+    if (action == 'sanitize') done = await markup.build.sanitize(raw);
+    if (action == 'summary') done = await markup.build.summary(raw);
+    if (action == 'text') done = await markup.build.text(raw);
+    if (action == 'html') done = await markup.build.html(raw);
     
     document.getElementById('output').innerText = done;
 }
 
 async function content() {
     var raw = document.getElementById('input').value;
-    document.getElementById('output').innerHTML = await markup.txt.content(raw, null, true);
+    document.getElementById('output').innerHTML = await markup.build.content(raw, null, true);
 }
 
 </script>
