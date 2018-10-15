@@ -158,7 +158,7 @@ Accessing dependencies:
 const remarkable = markup.dep.Remarkable;
 const sanitize = markup.dep.sanitizeHtml;
 const domparser = markup.dep.DomParser;
-const mtools = markup.mtools
+const mtools = markup.dep.mtools
 ```
 
 ## Known issues
