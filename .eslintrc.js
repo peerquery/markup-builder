@@ -26,7 +26,6 @@ module.exports = {
         'no-undef': [2],
     },
     globals: {
-        requirejs: false,
     },
     parserOptions: {
         ecmaVersion: 2017,
