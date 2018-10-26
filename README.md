@@ -120,7 +120,7 @@ markup.build.content(t /*,config, options*/).then(function(content){   //options
     console.log(content);
 });
 
-// "<p><strong>Lorem ipsum dolor sit amet</strong>, consectetuer adipiscing elit. Aenean <i>commodo ligula eget</i> dolor. Aenean massa. Cum <a target="_blank" href="/user/sociis">@sociis</a> natoque <a target="_blank" href="/trending/penatibus "> #penatibus </a> et magnis dis parturient montes,&lt;script&gt;alert(\'Quisque rutrum.\')&lt;/script&gt; nascetur ridiculus mus. Donec quam felis, <a href="https://www.youtube.com/watch?v=sO_YEdTcVXc">https://www.youtube.com/watch?v=sO_YEdTcVXc</a> <a href="https://travis-ci.org/peerquery/markup-builder">https://travis-ci.org/peerquery/markup-builder</p></a>\n"
+// "<p><strong>Lorem ipsum dolor sit amet</strong>, consectetuer adipiscing elit. Aenean <i>commodo ligula eget</i> dolor. Aenean massa. Cum <a target="_blank" href="/user/sociis">@sociis</a> natoque <a target="_blank" href="/trending/penatibus"> #penatibus </a> et magnis dis parturient montes,&lt;script&gt;alert(\'Quisque rutrum.\')&lt;/script&gt; nascetur ridiculus mus. Donec quam felis, <a href="https://www.youtube.com/watch?v=sO_YEdTcVXc">https://www.youtube.com/watch?v=sO_YEdTcVXc</a> <a href="https://travis-ci.org/peerquery/markup-builder">https://travis-ci.org/peerquery/markup-builder</a></p>\n';
 
 ```
 
